@@ -60,5 +60,61 @@ id = 'olá'
 // type alias
 type idtype = string | number
 
-const userId: idtype = 10 // Todos compartilham de um tipo, oq facilita muito
-const productId: idtype = 'pc'
+const userId: idtype = 10// Todos compartilham de um tipo, oq facilita muito
+// const productId: idtype = 'pc'
+
+// enum = enumera uma coleção e ajuda a lidar com dados mais complexos
+// Mais fácil 
+enum Size {
+    P = 'pequeno',
+    M = 'Médio',
+    G = 'grande'
+};
+
+const calça = {
+    name: 'calça jeans',
+    size: Size.G
+}; // Aqui você chama sem precisar criar dnv
+
+console.log(calça);
+
+//literal types = determinar um valor como tipo, ou seja, só aceita um valor
+let valor: 'Valor' | null
+valor = 'Valor'
+// exemplos
+    let usuario: 'autenticado' | null;
+    usuario = 'autenticado';
+    usuario = null;
+
+// Funções | Sempre tem q tipar
+function soma(a: number, b: number) {
+    return a + b
+};
+
+console.log(soma(50, 6));
+
+function Eae(name: string): string {
+    return `oi ${name}`
+};
+
+console.log(Eae('Matheus'));
+
+function logger(msg: string): void { //Void = função sem retorno
+    console.log(msg);
+};
+
+logger('Tú');
+
+function Agradacer(name: string, greet?: string): void {
+    if(greet) { // Se o argumento é verdadeiro || se ele existe
+        console.log(`Olá ${name} ${greet}`);
+        return;
+    } 
+    console.log(`oi ${name}`)
+};
+
+Agradacer('matheus');
+Agradacer('Tú', 'Você é linda');
+
+// interface
+
